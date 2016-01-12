@@ -1,0 +1,89 @@
+
+<!-- http://jsfiddle.net/MaY5A/1/ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>通知条学习</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta content="telephone=no,email=no" name="format-detection"/>
+    <style>
+
+        .marquee {
+            line-height: 2;
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: #00AAEE;
+            color: white;
+            position: relative;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .marquee_text {
+            display: inline-block;
+            padding-left: 100%;
+            text-indent: 0;
+            animation: marquee 15s linear infinite;
+        }
+        .marquee_text:hover {
+            animation-play-state: paused
+        }
+
+        /* Make it move */
+        @keyframes marquee {
+            0%   { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        .notice-bg{
+            background-color: #00d6b2;
+        }
+
+        .marquee-over:before{
+            z-index: 2;
+            color: #ff8500;
+            content: '';
+            background-color: #00d6b2;
+            line-height: 2;
+            width: 40px;
+            height: 100px;
+            display: block;
+            position: absolute;
+            opacity: 0.7;
+        }
+
+        .marquee-over:after{
+            z-index: 2;
+            color: #ff8500;
+            content: '';
+            background-color: #00d6b2;
+            line-height: 2;
+            width: 40px;
+            height: 100px;
+            display: block;
+            position: absolute;
+            right: 0px;
+            top:0px;
+            opacity: 0.7;
+        }
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+<div class="notice-bg">
+    <div class="marquee marquee-over">
+        <div class="marquee_text">我是通知,2012年12月12号要停机维修2012年12月12号要停机维修,期间某某功能无法正常是使用,给您带来的不变请谅解</div>
+    </div>
+</div>
+</body>
+</html>
