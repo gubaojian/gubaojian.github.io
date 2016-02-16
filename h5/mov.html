@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>video示例</title>
+<meta name="viewport"  content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+  <style>
+
+
+  </style>
+<body>
+
+<h4>video学习测试</h4>
+<video id="learn_video" width="320" height="260"
+       controls="controls" preload="auto">
+    <source src="mov_bbb.mp4" type="video/mp4"/>
+    <source src="mov_bbb.ogg" type="video/ogg"/>
+</video>
+<script type="text/javascript">
+   var video = document.getElementById("learn_video");
+
+    video.play();
+
+    setTimeout(function(){
+        video.pause();
+    }, 2000);
+
+</script>
+</body>
+</html>
