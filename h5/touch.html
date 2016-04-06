@@ -7,13 +7,27 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="format-detection" content="telephone=no">
 <meta name="format-detection" content="email=no">
+<script type="text/javascript">
+    var dpr = window.devicePixelRatio || 1;
+    //alert(dpr);
+    var scale =1/dpr;
+    var rate = 1;
+    var docEl = document.documentElement;
+    //document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width,user-scalable=no,initial-scale=' + scale + ',maximum-scale=' + scale + ',minimum-scale=' + scale);
+    docEl.style.fontSize = 100 / 300 * docEl.clientWidth * rate + 'px';
+
+    window.addEventListener("resize", function(){
+        docEl.style.fontSize = 100 / 300 * docEl.clientWidth * rate + 'px';
+    });
+    //docEl.style.fontSize = 100 + 'px';
+
+</script>
+<link href="./normalize.css" rel="stylesheet"/>
   <style>
 
        .banner{
-           width: 300px;
-           height: 100px;
-           margin-left: auto;
-           margin-right: auto;
+           width: 3rem;
+           height: 1rem;
            background: #2cd7aa;
            position: relative;
            overflow: hidden;
@@ -21,14 +35,13 @@
 
        .banner-item{
            position: absolute;
-           width: 300px;
-           height: 100px;
+           width: 3rem;
+           height: 1rem;
            list-style-type: none;
        }
   </style>
 <body>
 
-<h4>touch事件循环banner示例,请在手机浏览器或者模拟器中查看效果</h4>
 <div class="banner">
     <img class="banner-item" src="https://img.alicdn.com/tps/i3/TB1PFrzLpXXXXb4XVXXvKyzTVXX-520-280.jpg">
     <img class="banner-item" src="https://aecpm.alicdn.com/simba/img/TB1mC6TLXXXXXaxXXXXSutbFXXX.jpg">

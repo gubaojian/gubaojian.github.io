@@ -1,0 +1,31 @@
+<html> 
+<head> 
+<meta http－equiv="Content－Type" content="text/html; charset=gb2312">
+<title>闪烁的文字</title> 
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0"> 
+</head> 
+<body bgcolor="＃000000" text="＃000000"> 
+<p>　</p> 
+<h1 align="center">闪烁的文字</h1> 
+</body> 
+<script type="text/javascript">
+    //color为文字颜色的RGB值，令其由"0F"增至"FF"
+    var color = new Array("0F", "1F", "2F", "3F", "4F", "5F", "6F", "7F", "8F", "9F", "AF", "BF", "CF", "DF", "EF", "FF");
+    //i是数组color的坐标，add决定color的增减
+    var i = 0,
+            add = 1;
+    FadeText();
+    function FadeText() {
+        document.fgColor = "＃"  + color[i]  + color[i] + color[i];
+        if (add == 1) {
+            i ++;
+            if (i == 15) add = 0;
+        } else{
+            i--;
+            if (i == 0) add = 1;
+        }
+        //设置每0.1秒运行一次函数FadeText()
+        setTimeout("FadeText()", 100);
+    }
+</script> 
+</html> 

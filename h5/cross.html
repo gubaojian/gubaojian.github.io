@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>cross示例</title>
+<meta name="viewport"  content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<script type="text/javascript">
+    alert("ddd");
+</script>
+<style>
+
+    .banner{
+        width: 300px;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        background: #2cd7aa;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .banner-item{
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        list-style-type: none;
+    }
+</style>
+<body>
+
+<h4>touch事件循环banner示例,请在手机浏览器或者模拟器中查看效果</h4>
+<div class="banner">
+    <img class="banner-item" src="https://img.alicdn.com/tps/i3/TB1PFrzLpXXXXb4XVXXvKyzTVXX-520-280.jpg">
+    <img class="banner-item" src="https://aecpm.alicdn.com/simba/img/TB1mC6TLXXXXXaxXXXXSutbFXXX.jpg">
+    <img class="banner-item" src="https://aecpm.alicdn.com/simba/img/TB1YbUzLXXXXXbIXXXXSutbFXXX.jpg">
+    <img class="banner-item" src="https://aecpm.alicdn.com/simba/img/TB1jF.pLpXXXXadXVXXSutbFXXX.jpg">
+</div>
+<script type="text/javascript">
+    var banner =  document.getElementsByClassName("banner")[0];
+    var items =  document.getElementsByClassName("banner-item");
+    var currentItem = 3;
+    var slideItem = currentItem;
+    var slideCall;
+    var size = 4;
+    var startPoint;
+    banner.addEventListener("touchstart", function(e){
+        var touch = e.touches[0];
+        startPoint = touch;
+        clearSlide();
+    });
+    banner.addEventListener("touchmove", function(e){
+        var touch = e.touches[0];
+        var offsetX = touch.clientX - startPoint.clientX;
+        items[currentItem].style.zIndex = "10";
+        if(offsetX < 0){
+            items[currentItem].style.left = offsetX + "px";
+            items[nextIndex()].style.zIndex = "1";
+            items[preIndex()].style.zIndex = "5";
+        }else{
+            items[currentItem].style.left = offsetX + "px";
+            items[nextIndex()].style.zIndex = "5";
+            items[preIndex()].style.zIndex = "1";
+        }
+    });
+
+    banner.addEventListener("touchend", function(e){
+        var offset = items[currentItem].style.left;
+        if(!offset){
+            return;
+        }
+        offset = offset.replace("px","");
+        if(offset <= 50 && offset >= -50){
+            items[currentItem].style.left = "0px";
+        }else  if(offset > 50){
+            slideItem = currentItem;
+            items[currentItem].style.zIndex = "50";
+            slideCall = setInterval("slideRight()", 10);
+            currentItem = nextIndex();
+        }else  if(offset < -50){
+            slideItem = currentItem;
+            items[currentItem].style.zIndex = "50";
+            slideCall = setInterval("slideLeft()", 10);
+            currentItem = preIndex();
+        }
+        items[currentItem].style.zIndex = "10";
+    });
+
+    function clearSlide(){
+        if(slideCall) {
+            clearInterval(slideCall);
+            items[slideItem].style.left = "0px";
+            items[slideItem].style.zIndex = "1";
+            slideCall = undefined;
+        }
+    }
+    function slideRight(){
+        var offset = items[slideItem].style.left;
+        if(!offset){
+            if(slideCall){
+                clearInterval(slideCall);
+                slideCall = undefined;
+            }
+            return;
+        }
+        offset = offset.replace("px","");
+        if(offset > 300){
+            if(slideCall){
+                clearInterval(slideCall);
+                slideCall = undefined;
+            }
+            items[slideItem].style.left = "0px";
+            items[slideItem].style.zIndex = "1";
+        }else{
+            items[slideItem].style.left = (parseInt(offset) + 5) + "px";
+        }
+    }
+
+    function slideLeft(){
+        var offset = items[slideItem].style.left;
+        if(!offset){
+            if(slideCall){
+                clearInterval(slideCall);
+                slideCall = undefined;
+            }
+            return;
+        }
+        offset = offset.replace("px","");
+        if(offset < -300){
+            if(slideCall){
+                clearInterval(slideCall);
+                slideCall = undefined;
+            }
+            items[slideItem].style.left = "0px";
+            items[slideItem].style.zIndex = "1";
+        }else{
+            items[slideItem].style.left = (parseInt(offset) - 5) + "px";
+        }
+    }
+
+
+
+    function preIndex(){
+        var index = (currentItem  - 1)%size;
+        if(index < 0){
+            index = size - 1;
+        }
+        return index;
+    }
+    function nextIndex(){
+        var index = (currentItem  + 1)%size;
+        return index;
+    }
+
+
+</script>
+</body>
+</html>
