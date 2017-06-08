@@ -25,6 +25,24 @@
       .select{
         background-color:green;
      }
+
+     .am-list-item{
+       background:
+       linear-gradient(0deg, #fff, #fff) top left no-repeat,
+       linear-gradient(0deg, #fff, #fff) bottom left no-repeat,
+       linear-gradient(0deg, #ddd, #ddd 33%, transparent 33%) top left no-repeat,
+       linear-gradient(0deg, #ddd, #ddd 33%, transparent 33%) bottom left no-repeat, #fff;
+       background-size: 15px 1px,15px 1px,100% 0px,100% 1px;
+     }
+
+     .am-list-item:first-child{
+        background-size:0px 0px,15px 1px,100% 1px,100% 1px;
+     }
+
+     .am-list-body{
+       margin-top: 10px;
+     }
+
   </style>
 <body>
 
@@ -34,6 +52,18 @@
   <li><a href="#">茶</a></li>
   <li><a href="#">牛奶</a></li>
 </ul>
+<div class="am-list-body">
+
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+  <div class="am-list-item">列表</div>
+
+</div>
 
 </body>
 </html>
