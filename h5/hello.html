@@ -1,0 +1,46 @@
+
+<html>
+  <head>
+
+    <style>
+
+    </style>
+      <script src="https://unpkg.com/vue"></script>
+  </head>
+<body>
+<div id="app">
+  {{message}}
+  <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+  <p v-if="seen">看到你了哦</p>
+  <ol>
+     <li v-for="todo in todos">
+       {{todo}}
+     </li>
+     <todo-item v-for="item in todos" v-bind:todo="item"></todo-item>
+  </ol>
+  <button v-on:click="reverseMessage">修改消息</button>
+  <input v-model="message"/>
+</div>
+<script type="text/javascript">
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>这是个待办项{{todo}}</li>'
+});
+var app = new Vue({
+    el: '#app',
+    data: {
+     message: 'Hello Vue!' + new Date(),
+     seen : true,
+     todos : ["work", "hello", "hi"],
+   },
+   methods : {
+      reverseMessage : function(){
+          this.message = this.message + "增加"
+      }
+   },
+  });
+</script>
+</body>
+</html>
