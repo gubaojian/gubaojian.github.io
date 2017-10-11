@@ -5,6 +5,7 @@ Cross platform fast layout engine for mobile platform, native and front friend, 
 supported  flex box.
 https://www.w3.org/TR/css-flexbox-1/
 support percent and vm, default display flex
+support vw vh
 
 ## guide start
 
@@ -62,6 +63,14 @@ tag{
 ```
 
 ## supported component
+
+```
+{
+display:flex;
+display:frame;
+display:linear;
+}
+```
 
 
 
