@@ -1,0 +1,51 @@
+<html>
+<body>
+
+<p>这是段落。</p>
+<p>这是段落。</p>
+<p>这是段落。</p>
+
+<p>段落元素由 p 标签定义。</p>
+
+
+<script type="text/javascript">
+var count = 4000;
+
+function testString(){
+  var command = "";
+  var start = new Date().getTime();
+  for(var i = 0; i < count; i++){
+      command += i + "HelloWorld" + ";";
+  }
+  var end = new Date().getTime();
+  console.log("<h1>CMD LINK COSTS:" + (end - start)  + "</h1>");
+}
+
+function testJSON(){
+  var cmd_array = [];
+  var start = new Date().getTime();
+  for(var i = 0; i < count; i++){
+      cmd_array.push({i : "HelloWorld"});
+  }
+  var end = new Date().getTime();
+  console.log("<h1>JSON COMBINE COSTS:" + (end - start)  + "</h1>");
+}
+
+function testStringArrayJoin(){
+  var cmd_array = new Array(count);
+  var start = new Date().getTime();
+  for(var i = 0; i < count; i++){
+      cmd_array[i] = i + "HelloWorld";
+  }
+  var cmd = cmd_array.join(";")
+  var end = new Date().getTime();
+  console.log("<h1>ARRAY COMBINE COSTS:" + (end - start)  + "</h1>");
+}
+
+testString();
+testStringArrayJoin();
+testJSON();
+</script>
+
+</body>
+</html>

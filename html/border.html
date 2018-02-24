@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      #box{
+          border: groove 10px red;
+          border-radius: 20px;
+          width: 200px;
+          height: 100px;
+          background-color:#ccc;
+      }
+
+
+      .wrapper {
+         justify-content: center;
+         align-items: center;
+       }
+       .logo {
+         position: relative;
+         width: 600px;
+         height: 520px;
+         margin-top: 50px;
+         background-color: #FFF;
+       }
+       .v {
+         position: absolute;
+         width: 0px;
+         height: 0px;
+         border-style: solid;
+         border-left-color: rgba(0, 0, 0, 0);
+         border-right-color: rgba(0, 0, 0, 0);
+         border-bottom: 0;
+       }
+       .outer {
+         border-left-width: 300px;
+         border-right-width: 300px;
+         border-top-width: 520px;
+         border-top-color: #41B883;
+       }
+       .inner {
+         top: 0;
+         left: 120px;
+         border-left-width: 180px;
+         border-right-width: 180px;
+         border-top-width: 310px;
+         border-top-color: #35495e;
+       }
+       .blank {
+         top: 0;
+         left: 230px;
+         border-left-width: 70px;
+         border-right-width: 70px;
+         border-top-width: 118px;
+         border-top-color: #FFF;
+       }
+
+       .border-container{
+         width: 200px;
+         height: 200px;
+         background-color: #5b6dcd;
+         color: #fff;
+          margin-top:10px;
+          border:5px solid #5b6dcd;
+          border-radius: 10px;
+       }
+
+       .love{
+text-align:center;
+border:2px solid #a1a1a1;
+padding:10px 40px;
+background:#dddddd;
+width:350px;
+border-radius:25px;
+-moz-border-radius:25px; /* 老的 Firefox */
+}
+
+
+
+
+
+  </style>
+</head>
+<body>
+<refresh>dddd</refresh>
+<h1>My First Web Page</h1>
+
+<div id="box">
+ one
+</div>
+
+
+<div class="border-container">
+  ddd
+</div>
+
+<div class="love"></div>
+
+<div class="wrapper">
+    <div class="logo">
+      <div class="v outer"></div>
+      <div class="v inner"></div>
+      <div class="v blank"></div>
+    </div>
+  </div>
+</body>
+</html>
