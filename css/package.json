@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "collections": "^5.1.7",
+    "css": "^2.2.4",
+    "htmlparser2": "^3.10.0",
+    "node-fetch": "^2.3.0",
+    "unzipper": "^0.9.10"
+  }
+}
