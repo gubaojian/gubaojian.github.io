@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-function fetchUrl(url, callback){
+function fetchUrl(url, callback, error){
   if(url.startsWith("//")){
      url ="https:" + url;
   }
@@ -10,6 +10,9 @@ function fetchUrl(url, callback){
           callback(body);
       }, err => {
           console.log(err);
+          if(error){
+             error(err);
+          }
       });
 }
 

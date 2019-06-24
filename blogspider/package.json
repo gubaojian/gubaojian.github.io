@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "htmlparser2": "^3.10.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.1"
   }
 }
