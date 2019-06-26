@@ -56,6 +56,7 @@ function fetchStargazers(url){
         }, 1000);
       }else{
         console.log(url);
+        fs.writeFileSync(pageConfig.dataName, JSON.stringify(stargazers, null, 2));
         fs.writeFileSync(pageConfig.path + pageConfig.stateFile,  url);
       }
   }, function(error){
@@ -68,20 +69,18 @@ function fetchStargazers(url){
 
 
 var pageConfig  = {
-   path : "data/vue/",
-   url : "https://github.com/vuejs/vue/stargazers",
-   dataName : "data/vue/stargazers.json",
+   path : "data/flutter/",
+   url : "https://github.com/flutter/flutter/stargazers",
+   dataName : "data/flutter/stargazers.json",
    stateFile : "stateFile.dat"
 }
 
 
-//https://github.com/flutter/flutter/stargazers
-//https://github.com/facebook/react/stargazers
-//https://github.com/facebook/react-native/stargazers
-//https://github.com/vuejs/vue/stargazers
-//https://github.com/apache/incubator-weex/stargazers
-
 var stateFile = pageConfig.path + pageConfig.stateFile;
+
+if(!fs.existsSync(pageConfig.path)){
+   fs.mkdirSync(pageConfig.path);
+}
 
 if(fs.existsSync(stateFile)){
    var currentUrl = fs.readFileSync(pageConfig.path + pageConfig.stateFile, "utf-8");

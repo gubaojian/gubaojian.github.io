@@ -1,0 +1,33 @@
+topic/data/3d/repo.json
+https://github.com/topics/3d?o=desc&s=stars
+start from url https://github.com/topics/3d?o=desc&s=stars
+/mrdoob/three.js {"href":"/mrdoob/three.js","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/libgdx/libgdx {"href":"/libgdx/libgdx","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/aframevr/aframe {"href":"/aframevr/aframe","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/BabylonJS/Babylon.js {"href":"/BabylonJS/Babylon.js","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/ssloy/tinyrenderer {"href":"/ssloy/tinyrenderer","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/metafizzy/zdog {"href":"/metafizzy/zdog","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/a1studmuffin/SpaceshipGenerator {"href":"/a1studmuffin/SpaceshipGenerator","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/lettier/3d-game-shaders-for-beginners {"href":"/lettier/3d-game-shaders-for-beginners","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/AnalyticalGraphicsInc/cesium {"href":"/AnalyticalGraphicsInc/cesium","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/FreeCAD/FreeCAD {"href":"/FreeCAD/FreeCAD","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/tensorspace-team/tensorspace {"href":"/tensorspace-team/tensorspace","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/AaronJackson/vrn {"href":"/AaronJackson/vrn","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/timzhang642/3D-Machine-Learning {"href":"/timzhang642/3D-Machine-Learning","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/YadiraF/PRNet {"href":"/YadiraF/PRNet","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/ssloy/tinyraytracer {"href":"/ssloy/tinyraytracer","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/jagenjo/webglstudio.js {"href":"/jagenjo/webglstudio.js","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/mosra/magnum {"href":"/mosra/magnum","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/cleardusk/3DDFA {"href":"/cleardusk/3DDFA","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/gfxfundamentals/webgl-fundamentals {"href":"/gfxfundamentals/webgl-fundamentals","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/layabox/layaair {"href":"/layabox/layaair","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/ssloy/tinykaboom {"href":"/ssloy/tinykaboom","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/pissang/claygl {"href":"/pissang/claygl","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/syoyo/tinyobjloader {"href":"/syoyo/tinyobjloader","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/TheMozg/awk-raycaster {"href":"/TheMozg/awk-raycaster","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/armory3d/armory {"href":"/armory3d/armory","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/whxaxes/canvas-test {"href":"/whxaxes/canvas-test","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/huxingyi/dust3d {"href":"/huxingyi/dust3d","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/syt123450/giojs {"href":"/syt123450/giojs","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/ssloy/tinyraycaster {"href":"/ssloy/tinyraycaster","data-ga-click":"Explore, go to repository, location:topic repositories"}
+/tentone/nunuStudio {"href":"/tentone/nunuStudio","data-ga-click":"Explore, go to repository, location:topic repositories"}

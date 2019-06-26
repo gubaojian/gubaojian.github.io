@@ -13,7 +13,7 @@ function startSpider(){
     console.log('App Has Quit, Restart');
     setTimeout(function(){
         startSpider();
-    }, 5000)
+    }, 20000)
   });
 }
 
