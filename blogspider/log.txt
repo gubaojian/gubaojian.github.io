@@ -1,0 +1,129 @@
+{ href: '#start-of-content',
+  tabindex: '1',
+  class: 'p-3 bg-blue text-white show-on-focus js-skip-to-content' }
+{ class: 'Header-link',
+  href: 'https://github.com/',
+  'data-hotkey': 'g d',
+  'aria-label': 'Homepage',
+  'data-ga-click': 'Header, go to dashboard, icon:logo' }
+{ tabindex: '-1',
+  class:
+   'no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2',
+  href: '' }
+{ tabindex: '-1',
+  class:
+   'no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2',
+  href: '' }
+{ tabindex: '-1',
+  class:
+   'no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2',
+  href: '' }
+{ class:
+   'Header-link d-block d-lg-none py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15',
+  'data-ga-click': 'Header, click, Nav menu - item:dashboard:user',
+  'aria-label': 'Dashboard',
+  href: '/dashboard' }
+{ class:
+   'js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15',
+  'data-hotkey': 'g p',
+  'data-ga-click': 'Header, click, Nav menu - item:pulls context:user',
+  'aria-label': 'Pull requests you created',
+  'data-selected-links': '/pulls /pulls/assigned /pulls/mentioned /pulls',
+  href: '/pulls' }
+{ class:
+   'js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15',
+  'data-hotkey': 'g i',
+  'data-ga-click': 'Header, click, Nav menu - item:issues context:user',
+  'aria-label': 'Issues you created',
+  'data-selected-links': '/issues /issues/assigned /issues/mentioned /issues',
+  href: '/issues' }
+{ class: 'js-selected-navigation-item Header-link',
+  'data-ga-click': 'Header, click, Nav menu - item:marketplace context:user',
+  'data-octo-click': 'marketplace_click',
+  'data-octo-dimensions': 'location:nav_bar',
+  'data-selected-links': ' /marketplace',
+  href: '/marketplace' }
+{ class:
+   'js-selected-navigation-item Header-link  mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15',
+  'data-ga-click': 'Header, click, Nav menu - item:explore',
+  'data-selected-links':
+   '/explore /trending /trending/developers /integrations /integrations/feature/code /integrations/feature/collaborate /integrations/feature/ship showcases showcases_search showcases_landing /explore',
+  href: '/explore' }
+{ class:
+   'Header-link d-block d-lg-none mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15',
+  'aria-label': 'View profile and more',
+  'aria-expanded': 'false',
+  'aria-haspopup': 'false',
+  href: 'https://github.com/gubaojian' }
+{ class: 'Header-link',
+  href: 'https://github.com/',
+  'data-hotkey': 'g d',
+  'aria-label': 'Homepage',
+  'data-ga-click': 'Header, go to dashboard, icon:logo' }
+{ 'aria-label': 'You have unread notifications',
+  class:
+   'Header-link notification-indicator position-relative tooltipped tooltipped-s js-socket-channel js-notification-indicator',
+  'data-hotkey': 'g n',
+  'data-ga-click': 'Header, go to notifications, icon:unread',
+  'data-channel': 'notification-changed:2258481',
+  href: '/notifications' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/new',
+  'data-ga-click': 'Header, create new repository' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/new/import',
+  'data-ga-click': 'Header, import a repository' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: 'https://gist.github.com/',
+  'data-ga-click': 'Header, create new gist' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/organizations/new',
+  'data-ga-click': 'Header, create new organization' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/new/project',
+  'data-ga-click': 'Header, create new project' }
+{ role: 'menuitem',
+  class:
+   'no-underline user-profile-link px-3 pt-2 pb-2 mb-n2 mt-n1 d-block',
+  href: '/gubaojian',
+  'data-ga-click': 'Header, go to profile, text:Signed in as' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/gubaojian',
+  'data-ga-click': 'Header, go to profile, text:your profile' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/gubaojian?tab=repositories',
+  'data-ga-click': 'Header, go to repositories, text:your repositories' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/gubaojian?tab=projects',
+  'data-ga-click': 'Header, go to projects, text:your projects' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/gubaojian?tab=stars',
+  'data-ga-click': 'Header, go to starred repos, text:your stars' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: 'https://gist.github.com/mine',
+  'data-ga-click': 'Header, your gists, text:your gists' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: 'https://help.github.com',
+  'data-ga-click': 'Header, go to help, text:help' }
+{ role: 'menuitem',
+  class: 'dropdown-item',
+  href: '/settings/profile',
+  'data-ga-click': 'Header, go to settings, icon:settings' }
+{ itemprop: 'image',
+  class: 'u-photo d-block position-relative',
+  'aria-hidden': 'true',
+  href:
+   'https://avatars3.githubusercontent.com/u/19337562?s=400&v=4' }
+{ class: 'u-email ', href: 'mailto:liyang.lewin@gmail.com' }
+liyang.lewin@gmail.com
