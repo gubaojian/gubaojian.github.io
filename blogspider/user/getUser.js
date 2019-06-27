@@ -40,8 +40,9 @@ function fetchNextUser(){
 }
 
 function fetchUserInfo(item){
-  var apiInfoUrl = "https://api.github.com/users/" + item.name + "?access_token=0ac51c183e8d28db645d9bf4e738e8bbf0d30729";
+  var apiInfoUrl = "https://api.github.com/users/" + item.name + "?access_token=5a2b82e5c4a030b328977aab7e71fd7a7900b6e7";
   if(users[item.name]){
+     console.log("skip user " + item.name);
      fetchNextUser();
      return;
   }
@@ -69,7 +70,7 @@ function fetchUserInfo(item){
 
 
 var args = process.argv.splice(2);
-var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/WxJava/stargazers.json";
+var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/dubbo/stargazers.json";
 var dataPath  =  "user/data/";
 var userFileName = dataPath + "user.json";
 var data = fs.readFileSync(dataFileName, "utf-8");
@@ -79,5 +80,12 @@ if(fs.existsSync(userFileName)){
    var userFileData = fs.readFileSync(userFileName, "utf-8");
    users = JSON.parse(userFileData) || {};
 }
-var item = repos.shift();
-fetchUserInfo(item);
+while(true && repos.length > 0){
+  var item = repos.shift();
+  if(users[item.name]){
+      console.log('skip ' + item.name);
+      continue;
+  }
+  fetchUserInfo(item);
+  break;
+}

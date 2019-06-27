@@ -69,9 +69,9 @@ function fetchStargazers(url){
 
 
 var pageConfig  = {
-   path : "data/flutter/",
-   url : "https://github.com/flutter/flutter/stargazers",
-   dataName : "data/flutter/stargazers.json",
+   path : "data/weui/",
+   url : "https://github.com/Tencent/weui/stargazers",
+   dataName : "data/weui/stargazers.json",
    stateFile : "stateFile.dat"
 }
 
