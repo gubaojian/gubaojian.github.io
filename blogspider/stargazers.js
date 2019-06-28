@@ -69,9 +69,9 @@ function fetchStargazers(url){
 
 
 var pageConfig  = {
-   path : "data/weui/",
-   url : "https://github.com/Tencent/weui/stargazers",
-   dataName : "data/weui/stargazers.json",
+   path : "data/omi/",
+   url : "https://github.com/Tencent/omi/stargazers",
+   dataName : "data/omi/stargazers.json",
    stateFile : "stateFile.dat"
 }
 

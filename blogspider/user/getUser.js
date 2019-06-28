@@ -1,7 +1,7 @@
 const webutil = require("./webutil.js")
 const htmlparser = require("htmlparser2");
 const fs = require('fs');
-
+const MAX_SAVE_FILE_COUNT = 32;
 
 var repoUrls = [];
 
@@ -39,16 +39,27 @@ function fetchNextUser(){
     fetchUserInfo(item);
 }
 
+var saveCount = 0;
+const token = "4a7e33c2dcbb904222b07b3b058251333ef391de";
+//const token = "61f1df22b9aea756b112c3d1a57187d4a8115be1";
+//const token = "4519425f5d6d7063bdd331ce61339f41564f42dd";
 function fetchUserInfo(item){
-  var apiInfoUrl = "https://api.github.com/users/" + item.name + "?access_token=5a2b82e5c4a030b328977aab7e71fd7a7900b6e7";
+  var apiInfoUrl = "https://api.github.com/users/" + item.name + "?access_token=" + token;
   if(users[item.name]){
      console.log("skip user " + item.name);
      fetchNextUser();
      return;
   }
-  console.log("fetch " + item.link);
+  console.log("fetch " + item.link + " remain " + repos.length);
+  var startFetch = new Date().getTime();
   webutil.fetchUrl(apiInfoUrl,  function(body){
       var userInfo = JSON.parse(body);
+      if(userInfo.message && userInfo.message != "Not Found"){
+          console.log(body  + " " + JSON.stringify(item));
+          return;
+      }
+      var endFetch = new Date().getTime();
+      console.log("fetch used " + (endFetch - startFetch));
       /**
       webutil.fetchUrl(item.link,  function(body){
           parseUserEmail(body, userInfo);
@@ -61,16 +72,27 @@ function fetchUserInfo(item){
           fetchNextUser();
       });*/
       users[item.name] = userInfo;
-      fs.writeFileSync(userFileName, JSON.stringify(users, null, 2));
+      saveCount++;
+      if(saveCount >= MAX_SAVE_FILE_COUNT || repos.length == 0){
+        var start = new Date().getTime();
+        fs.writeFileSync(userFileName, JSON.stringify(users, null, 2));
+        var end = new Date().getTime();
+        console.log("save used " + (end - start));
+        saveCount = 0;
+      }
       fetchNextUser();
   }, function(error){
       console.log(error);
+      fetchUserInfo(item);
   });
 }
 
 
+//
+//var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/dubbo/stargazers.json";
+
 var args = process.argv.splice(2);
-var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/dubbo/stargazers.json";
+var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/fastjson/stargazers.json";
 var dataPath  =  "user/data/";
 var userFileName = dataPath + "user.json";
 var data = fs.readFileSync(dataFileName, "utf-8");
@@ -87,5 +109,11 @@ while(true && repos.length > 0){
       continue;
   }
   fetchUserInfo(item);
+  if(repos.length > 0){
+     fetchUserInfo(repos.shift());
+  }
+  if(repos.length > 0){
+     fetchUserInfo(repos.shift());
+  }
   break;
 }
