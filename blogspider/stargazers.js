@@ -69,9 +69,9 @@ function fetchStargazers(url){
 
 
 var pageConfig  = {
-   path : "data/omi/",
-   url : "https://github.com/Tencent/omi/stargazers",
-   dataName : "data/omi/stargazers.json",
+   path : "data/VasSonic/",
+   url : "https://github.com/Tencent/VasSonic/stargazers",
+   dataName : "data/VasSonic/stargazers.json",
    stateFile : "stateFile.dat"
 }
 

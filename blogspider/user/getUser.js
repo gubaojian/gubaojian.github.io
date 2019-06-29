@@ -40,8 +40,8 @@ function fetchNextUser(){
 }
 
 var saveCount = 0;
-const token = "4a7e33c2dcbb904222b07b3b058251333ef391de";
-//const token = "61f1df22b9aea756b112c3d1a57187d4a8115be1";
+//const token = "4a7e33c2dcbb904222b07b3b058251333ef391de";
+const token = "686431d6c8d53091df3ea59d9e87b23a23a6fd03 ";
 //const token = "4519425f5d6d7063bdd331ce61339f41564f42dd";
 function fetchUserInfo(item){
   var apiInfoUrl = "https://api.github.com/users/" + item.name + "?access_token=" + token;
@@ -92,7 +92,7 @@ function fetchUserInfo(item){
 //var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/dubbo/stargazers.json";
 
 var args = process.argv.splice(2);
-var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/fastjson/stargazers.json";
+var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/ant-design/stargazers.json";
 var dataPath  =  "user/data/";
 var userFileName = dataPath + "user.json";
 var data = fs.readFileSync(dataFileName, "utf-8");

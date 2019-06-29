@@ -16,4 +16,4 @@ for(var index in keys){
     }
 }
 
-console.log(blogs.length);
+console.log(blogs.length  + " total " + keys.length);
