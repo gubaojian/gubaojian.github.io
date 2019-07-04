@@ -69,9 +69,9 @@ function fetchStargazers(url){
 
 
 var pageConfig  = {
-   path : "data/VasSonic/",
-   url : "https://github.com/Tencent/VasSonic/stargazers",
-   dataName : "data/VasSonic/stargazers.json",
+   path : "data/phxsql/",
+   url : "https://github.com/Tencent/phxsql/stargazers",
+   dataName : "data/phxsql/stargazers.json",
    stateFile : "stateFile.dat"
 }
 

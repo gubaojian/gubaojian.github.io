@@ -41,9 +41,12 @@ function fetchNextUser(){
 
 var saveCount = 0;
 //const token = "4a7e33c2dcbb904222b07b3b058251333ef391de";
-const token = "686431d6c8d53091df3ea59d9e87b23a23a6fd03 ";
+const token = "da2d85e041961c5e67c3be6c82f144836bcc459f";
 //const token = "4519425f5d6d7063bdd331ce61339f41564f42dd";
 function fetchUserInfo(item){
+  if(!item){
+    return;
+  }
   var apiInfoUrl = "https://api.github.com/users/" + item.name + "?access_token=" + token;
   if(users[item.name]){
      console.log("skip user " + item.name);
@@ -56,6 +59,7 @@ function fetchUserInfo(item){
       var userInfo = JSON.parse(body);
       if(userInfo.message && userInfo.message != "Not Found"){
           console.log(body  + " " + JSON.stringify(item));
+          process.exit(8);
           return;
       }
       var endFetch = new Date().getTime();
@@ -92,7 +96,8 @@ function fetchUserInfo(item){
 //var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/dubbo/stargazers.json";
 
 var args = process.argv.splice(2);
-var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/ant-design/stargazers.json";
+//var dataFileName = "/Users/furture/code/gubaojianblog/blogspider/data/free-programming/stargazers.json";
+var dataFileName = args[0];
 var dataPath  =  "user/data/";
 var userFileName = dataPath + "user.json";
 var data = fs.readFileSync(dataFileName, "utf-8");
@@ -101,7 +106,13 @@ var users = {};
 if(fs.existsSync(userFileName)){
    var userFileData = fs.readFileSync(userFileName, "utf-8");
    users = JSON.parse(userFileData) || {};
+   fs.writeFileSync("user/data/user_" +  new Date().getTime() + ".json", JSON.stringify(users, null, 2));
 }
+
+while(repos.length > 0 && repos[repos.length -1] == undefined){
+     repos.pop();
+}
+
 while(true && repos.length > 0){
   var item = repos.shift();
   if(users[item.name]){
