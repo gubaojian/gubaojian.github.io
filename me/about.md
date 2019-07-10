@@ -19,8 +19,9 @@
 #### 四、个人开源项目
 | **名称** | 网址 |
 | --- | --- |
-| 数据库路由框架  | [https://github.com/gubaojian/routing4db](https://github.com/gubaojian/routing4db) |
 | DuktapeJava引擎 | [https://github.com/gubaojian/DuktapeJava](https://github.com/gubaojian/DuktapeJava) |
-| 汇读APP + 服务端 | https://github.com/gubaojian/huidu/ |
 | WeexUikit | [http://gitlab.alibaba-inc.com/jianbai.gbj/weex-uikit](http://gitlab.alibaba-inc.com/jianbai.gbj/weex-uikit) |
+| Native动态化框架 | [https://github.com/gubaojian/Layout](https://github.com/gubaojian/Layout) |
 | Wson协议 | [https://github.com/gubaojian/wson](https://github.com/gubaojian/wson) |
+| 汇读APP + 服务端 | https://github.com/gubaojian/huidu/ |
+| 数据库路由框架  | [https://github.com/gubaojian/routing4db](https://github.com/gubaojian/routing4db) |
