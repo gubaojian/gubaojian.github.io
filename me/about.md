@@ -25,6 +25,6 @@
 | 汇读APP + 服务端 | https://github.com/gubaojian/huidu/ |
 | 数据库路由框架  | [https://github.com/gubaojian/routing4db](https://github.com/gubaojian/routing4db) |
 | 个人分享文章 | [渲染引擎比较分享](https://mp.weixin.qq.com/s/BPFldh8uPsv-hvVQbYlTOg?from=timeline&scene=2&subscene=2&clicktime=1586868112&enterid=1586868112) |
-| 参与项目 | [https://github.com/apache/incubator-weex](https://github.com/apache/incubator-weex) |
+| 参与开源项目 | [https://github.com/apache/incubator-weex](https://github.com/apache/incubator-weex) |
 
 
