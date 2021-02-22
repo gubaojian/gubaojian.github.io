@@ -1,3 +1,5 @@
 apkparser/node_modules/
 apkparser/apk/
 blogspider/node_modules/
+*.class
+*.out
