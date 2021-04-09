@@ -14,7 +14,7 @@ public class DisruptorTest {
 
     @Test
     public void testDisruptorTest() throws InterruptedException {
-// The factory for the event
+        // The factory for the event
         LongEventFactory factory = new LongEventFactory();
 
         // Specify the size of the ring buffer, must be power of 2.
@@ -40,7 +40,7 @@ public class DisruptorTest {
             bb.putLong(0, l);
             producer.onData(bb);
         }
-        System.out.println("producer used " + (System.currentTimeMillis() - start));
+        System.out.println(Thread.currentThread() + " producer used " + (System.currentTimeMillis() - start));
     }
 
 
@@ -63,6 +63,7 @@ public class DisruptorTest {
 
     public class LongEventHandler implements EventHandler<LongEvent> {
         public void onEvent(LongEvent event, long sequence, boolean endOfBatch) {
+            System.out.println("onEvent " + Thread.currentThread());
         }
     }
 
@@ -77,16 +78,15 @@ public class DisruptorTest {
         }
 
         private final EventTranslatorOneArg<LongEvent, ByteBuffer> TRANSLATOR =
-                new EventTranslatorOneArg<LongEvent, ByteBuffer>()
-                {
-                    public void translateTo(LongEvent event, long sequence, ByteBuffer bb)
-                    {
+                new EventTranslatorOneArg<LongEvent, ByteBuffer>() {
+                    public void translateTo(LongEvent event, long sequence, ByteBuffer bb) {
+                        System.out.println("translateTo " + Thread.currentThread());
                         event.set(bb.getLong(0));
                     }
                 };
 
-        public void onData(ByteBuffer bb)
-        {
+        public void onData(ByteBuffer bb) {
+            System.out.println("onData " + Thread.currentThread());
             ringBuffer.publishEvent(TRANSLATOR, bb);
         }
     }
@@ -101,6 +101,7 @@ public class DisruptorTest {
 
         public void onData(ByteBuffer bb)
         {
+            System.out.println("LongEventProducer onData " + Thread.currentThread());
             long sequence = ringBuffer.next();  // Grab the next sequence
             try {
                 LongEvent event = ringBuffer.get(sequence); // Get the entry in the Disruptor
